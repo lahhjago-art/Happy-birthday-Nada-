@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Nadaa 🎂🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            max-width: 100vw;
+            width: 100%;
+            background: linear-gradient(135deg, #fef9e7 0%, #f8efdb 50%, #fffaf0 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: auto;
+            position: relative;
+            padding: 10px;
+        }
+        
+        /* Page 1: SMALLER TEXT ABOVE BUTTON */
+        .page1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            gap: 2rem;
+        }
+        
+        .page1-title {
+            font-family: 'Playfair Display', serif;
+            /* MADE SMALLER - Reduced from clamp(1.8rem, 6vw, 3rem) */
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            font-weight: 400;
+            background: linear-gradient(45deg, #ff6b9d, #ffa726, #ff8a80, #ffb74d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 0 15px rgba(255, 107, 157, 0.6),
+                0 0 30px rgba(255, 167, 38, 0.5),
+                0 4px 12px rgba(0,0,0,0.15);
+            line-height: 1.3;
+            text-align: center;
+            animation: glow 3s ease-in-out infinite alternate;
+            margin: 0;
+            padding: 0 15px;
+            max-width: 90vw;
+        }
+        
+        .continue-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 1.4rem 2.5rem;
+            background: linear-gradient(45deg, #ff6b9d, #ffa726, #ff8a80, #ffb74d);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 
+                0 10px 30px rgba(255, 107, 157, 0.4),
+                0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            animation: pulse 1.5s ease-in-out infinite;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            width: auto;
+            max-width: 320px;
+            min-width: 240px;
+            height: 70px;
+            touch-action: manipulation;
+            white-space: nowrap;
+        }
+        
+        .continue-btn:hover, .continue-btn:active {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 157, 0.6),
+                0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        .continue-btn:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+        
+        /* Page 2 Styles (Original Birthday Page) */
+        .page2 {
+            text-align: center;
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .happy-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.2rem, 14vw, 5rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b9d, #ffa726, #ff8a80, #ffb74d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 0 15px rgba(255, 107, 157, 0.6),
+                0 0 30px rgba(255, 167, 38, 0.5),
+                0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: clamp(0.3rem, 2vw, 0.8rem);
+            line-height: 1.1;
+        }
+        
+        .birthday-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.1rem, 6vw, 2rem);
+            font-weight: 600;
+            background: linear-gradient(45deg, #ff8a80, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 2px 6px rgba(0,0,0,0.15),
+                0 0 20px rgba(255, 138, 128, 0.6);
+            margin-bottom: clamp(0.3rem, 2vw, 0.8rem);
+            line-height: 1.3;
+            padding: 0 10px;
+        }
+        
+        .third-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1rem, 5vw, 1.6rem);
+            font-weight: 400;
+            font-style: italic;
+            background: linear-gradient(45deg, #ffa726, #ffb74d, #ffcc80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.1),
+                0 0 15px rgba(255, 167, 38, 0.5);
+            margin-bottom: clamp(1rem, 4vw, 2rem);
+            line-height: 1.4;
+            padding: 0 10px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .cake {
+            font-size: clamp(3rem, 16vw, 6rem);
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 4px 12px rgba(255, 107, 157, 0.4));
+            line-height: 1;
+        }
+        
+        /* Shared Styles */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            background: linear-gradient(45deg, #ff6b9d, #ffa726);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: floatHeart 4s linear infinite;
+            text-shadow: 0 0 10px rgba(255, 107, 157, 0.8);
+        }
+        
+        /* Hide pages */
+        .page1.hidden, .page2.hidden {
+            display: none;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 15px rgba(255, 107, 157, 0.6),
+                    0 0 30px rgba(255, 167, 38, 0.5),
+                    0 4px 12px rgba(0,0,0,0.15);
+            }
+            to {
+                text-shadow: 
+                    0 0 25px rgba(255, 107, 157, 0.9),
+                    0 0 40px rgba(255, 167, 38, 0.8),
+                    0 8px 20px rgba(0,0,0,0.2);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-8px); }
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Mobile-first responsive design */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .page1, .page2 {
+                padding: 15px;
+            }
+            
+            /* SMALLER TEXT ON MOBILE TOO */
+            .page1-title {
+                font-size: clamp(1rem, 3.5vw, 1.6rem);
+                line-height: 1.2;
+                padding: 0 10px;
+            }
+            
+            .continue-btn {
+                font-size: 1.25rem;
+                padding: 1.2rem 2rem;
+                height: 65px;
+                max-width: 280px;
+                min-width: 220px;
+            }
+            
+            .happy-text {
+                margin-bottom: 0.5rem;
+            }
+            
+            .birthday-text, .third-text {
+                margin-bottom: 1rem;
+                padding: 0 5px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .page1 {
+                gap: 1.5rem;
+            }
+            
+            /* EVEN SMALLER ON VERY SMALL SCREENS */
+            .page1-title {
+                font-size: clamp(0.9rem, 3vw, 1.4rem);
+                padding: 0 8px;
+            }
+            
+            .continue-btn {
+                font-size: 1.15rem;
+                padding: 1.1rem 1.8rem;
+                height: 60px;
+                max-width: 260px;
+                min-width: 200px;
+            }
+            
+            .happy-text {
+                font-size: clamp(2rem, 13vw, 4rem);
+            }
+            
+            .birthday-text {
+                font-size: clamp(1rem, 5.5vw, 1.8rem);
+            }
+            
+            .third-text {
+                font-size: clamp(0.9rem, 4.5vw, 1.4rem);
+            }
+            
+            .cake {
+                font-size: clamp(2.8rem, 15vw, 5rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts -->
+    <div class="hearts" id="hearts"></div>
+    
+    <!-- Page 1: SMALLER TEXT ABOVE BUTTON -->
+    <div class="page1" id="page1">
+        <h1 class="page1-title">👇🏻if you believe me, click this👇🏻</h1>
+        <button class="continue-btn" onclick="showBirthday()">CLICK ME!</button>
+    </div>
+    
+    <!-- Page 2: Birthday Greeting (Original) -->
+    <div class="page2 hidden" id="page2">
+        <div class="birthday-container">
+            <div class="happy-text">Happy Birthday Nadaa</div>
+            <div class="birthday-text">🎂 semoga yang tersemogakan kesemogakan yaa 🎉</div>
+            <div class="third-text">btw minta nomer wa dongg</div>
+            <div class="cake">🎂✨</div>
+        </div>
+    </div>
+
+    <script>
+        let heartsActive = false;
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['🎉', '🎁', '🎈', '✨'][Math.floor(Math.random() * 4)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.remove();
+                }
+            }, 7000);
+        }
+        
+        // Show birthday page
+        function showBirthday() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            
+            // Start confetti only after transitioning to page 2
+            heartsActive = true;
+            setInterval(createHeart, 400);
+            
+            // Initial burst of hearts
+            for(let i = 0; i < 8; i++) {
+                setTimeout(createHeart, i * 150);
+            }
+        }
+        
+        // Prevent zoom on iOS
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
